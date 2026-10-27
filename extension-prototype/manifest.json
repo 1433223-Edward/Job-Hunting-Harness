@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Job Hunting Agent",
+  "version": "0.1.0",
+  "description": "按需读取当前网页的标题、URL 和正文文本。",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_title": "Job Hunting Agent",
+    "default_popup": "popup.html"
+  }
+}

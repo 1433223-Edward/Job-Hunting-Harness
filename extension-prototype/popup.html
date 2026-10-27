@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job Hunting Agent</title>
+    <link rel="stylesheet" href="popup.css">
+    <script src="popup.js" defer></script>
+  </head>
+  <body>
+    <h1>Job Hunting Agent</h1>
+    <button id="read-button" type="button">读取当前页面</button>
+    <p id="status" role="status" aria-live="polite">打开网页后，点击按钮读取。</p>
+    <p id="error" role="alert" hidden></p>
+    <main id="result" aria-busy="false">
+      <dl>
+        <dt>页面标题</dt>
+        <dd id="page-title">尚未读取</dd>
+        <dt>页面 URL</dt>
+        <dd id="page-url">尚未读取</dd>
+        <dt>正文字符数量</dt>
+        <dd id="character-count">尚未读取</dd>
+        <dt>截断情况</dt>
+        <dd id="truncation">尚未读取</dd>
+        <dt>提取模式</dt>
+        <dd id="extraction-mode">尚未读取</dd>
+      </dl>
+      <p id="quality-notice" role="status" hidden></p>
+      <details id="structured-result" hidden>
+        <summary>职位摘要</summary>
+        <dl id="job-fields"></dl>
+        <p id="missing-fields"></p>
+        <details>
+          <summary>摘要原文（独立于完整 JD）</summary>
+          <pre id="summary-text"></pre>
+        </details>
+      </details>
+      <label id="text-label" for="page-text">提取的正文文本</label>
+      <textarea id="page-text" readonly placeholder="读取结果会显示在这里"></textarea>
+      <button id="copy-button" type="button" disabled>复制提取文本</button>
+      <details id="raw-result" hidden>
+        <summary>查看清洗前原始提取结果</summary>
+        <p id="raw-count"></p>
+        <textarea id="raw-text" aria-label="清洗前原始提取结果" readonly></textarea>
+      </details>
+    </main>
+  </body>
+</html>
